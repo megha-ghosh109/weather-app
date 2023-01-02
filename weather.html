@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+   
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <section class="vh-100" style="background: linear-gradient(70.6deg, rgb(172, 30, 255) 0.3%, rgb(65, 35, 251) 55.8%, rgb(35, 251, 224) 105.1%);">
+      <div class="container py-5 h-100">
+    
+        <div class="row d-flex justify-content-center align-items-center h-100" >
+          <div class="col-md-10 col-xl-7" >
+    
+            <div class="card" style="color: #4B515D; border-radius: 35px; background-image: url('images/photo.jpg');">
+              <div class="card-body p-4">
+    
+                <div class="d-flex">
+                  <h6 class="flex-grow-1"><span style="font-weight: bold; margin:0px 0px 20px 15px;color: black; opacity: 0.8">
+                  <div class="ll" style="margin:0px 0px 0px 25px"> Kolkata </div></span></h6>
+                  <h6><div style="margin:20px 50px 15px 15px; font-weight:bold" class="r_time"> </div> </h6>
+                </div>
+                <div >
+                  <form id="loc" > 
+                    <div class="row">
+                      <div class="col-8">
+                          <input type="search" id="search" placeholder="Enter your city" class="form-control rounded">  
+                      </div>
+                      <div class="col-2">
+                          <input type="submit" value="Search" class="btn btn-dark" style="margin:0px 0px" > 
+                      </div>
+                      <div class="col-2">
+                          <button type="button" id="geol" class="btn btn-success" style="margin:0px 5px; padding: 6px 9px ">Current</button>
+                      </div>
+                    </div>
+                        </form>
+                      </div>
+                <div style="margin:10px 10px 0px 10px">
+                  <img src="https://www.freeiconspng.com/thumbs/sunny-icon/sunny-icon-17.png"
+                    width="100px">
+                </div>
+                <div class="imp" style="display:inline; ">
+                  <div class="row">
+                    <div class="col-9">
+                <h6 style="margin:20px 0px 0px 0px; font-weight: 400px; color: black" >
+                   <div class="curr_loc">
+                  Kolkata, Pandit Satghara, West Bengal
+                   </div>
+                    <div class="current_time">
+                    
+                    </div>
+                   <div id="des"> Sunny </div>
+                </h6>
+              </div>
+                    <div class="col-3">
+                  <h6 class=" font-weight-bold" style="color: #1C2331; font-size:30px;"><span id="change"> 23</span>
+                     <span style="font-size: 1rem; position:relative; top: -12px; text-decoration-line: none" id="link"> 
+                      <a href="#" id="celsius-link" style="text-decoration: none">°C</a>
+                      |<a href="#" id="fahrenheit-link" style="text-decoration: none" >°F</a>
+                     </span>
+                    
+                  </h6>
+                  <span class="small" style="color: #0D2544; font-weight:bold; font-family:Times; font-size: 15px "><span id="pre"> Pressure: 1004 Pa</span><div>
+
+                     <span id="hum"> Humidity: 65% </span></div>
+                      <div>
+                      <span id="wind"> Wind: 0 km/h </span></div>
+                         </span>
+                </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-around align-items-center mb-3">
+                    <div class="flex-column" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);">
+                      <i class="fas fa-minus"></i>
+                    </div style="background: linear-gradient(to top, #09203f 0%, #537895 100%);">
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px;">
+                      <p class="small mb-1">Sun</p>
+                      <p class="mt">☀️</p>
+                      <p class="small mb-0"><strong>21°/<br>17°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: white; margin:0px 15px">
+                      <p class="small mb-1">Mon</p>
+                      <p class="mt">🌧️</p>
+                      <p class="small mb-0"><strong>24°/<br>18°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px">
+                      <p class="small mb-1">Tue</p>
+                      <p class="mt">🌫️</p>
+                      <p class="small mb-0"><strong>19°/<br>21°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px">
+                      <p class="small mb-1">Wed</p>
+                      <p class="mt">🌥️</p>
+                      <p class="small mb-0"><strong>18°/<br>22°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px">
+                      <p class="small mb-1">Thu</p>
+                      <p class="mt">🌤️</p>
+                      <p class="small mb-0"><strong>21°/<br>19°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px">
+                      <p class="small mb-1">Fri</p>
+                      <p class="mt">☀️</p>
+                      <p class="small mb-0"><strong>24°/<br>26°C</strong></p>
+                    </div>
+                    <div class="flex-column border" style="border-radius: 10px; padding: .75rem; background: linear-gradient(to top, #09203f 0%, #537895 100%); color: whitesmoke; margin:0px 15px">
+                      <p class="small mb-1">Sat</p>
+                      <p class="mt">🌦️</p>
+                      <p class="small mb-0"><strong>23°/<br>27°C</strong></p>
+                    </div>
+                    
+
+                  
+                  </div>
+                  <div class="meg" style="display:block; text-align: center; color:black; font-family: Georgia, 'Times New Roman', Times, serif;" >
+                      Coded by Megha Ghosh
+                    
+                      </div>
+                </div>
+    
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    </section>
+<script>
+let now = new Date();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+console.log(day);
+
+let hours = [now.getHours()];
+let minuites = [now.getMinutes()];
+if (minuites < 10) {
+  minuites = `0${minuites}`;
+}
+let time = hours + ":" + minuites;
+console.log(time);
+let curr_time = `${day}, ${time}`;
+console.log(curr_time);
+
+let now_t = document.querySelector("div .current_time");
+console.log(now_t);
+now_t.innerHTML = curr_time;
+let now_rtd = document.querySelector("div .r_time");
+console.log(now_rtd);
+now_rtd.innerHTML = time;
+
+/*function hlink(event) {
+    event.preventDefault();
+    let f_link = document.querySelector("#fahrenheit-link");
+    let ff_link = document.querySelector("#change");
+    ff_link.innerHTML = 67;
+  }
+
+  let link_ = document.querySelector("#fahrenheit-link");
+  link_.addEventListener("click", hlink);*/
+
+  /*function c_link(event) {
+    event.preventDefault();
+    let cc_link = document.querySelector("#celsius-link");
+    let ccc_link = document.querySelector("#change");
+    ccc_link.innerHTML = 66;
+  }
+  let linkc_ = document.querySelector("#celsius-link");
+  linkc_.addEventListener("click", c_link);*/
+
+function location_geo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(curlocation);
+}
+
+function curlocation(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+  let apiKey = "5fdeda3e32d8069764f0c24fbed131a7";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiURL).then(temp);
+}
+function temp(response) {
+  console.log(response.data.main.temp);
+  let loc_d = document.querySelector("div .curr_loc");
+  let loc_p = document.querySelector("div .ll");
+  loc_d.innerHTML = response.data.name;
+  loc_p.innerHTML = response.data.name;
+  let temp_r = document.querySelector("#change");
+  temp_r.innerHTML = Math.round(response.data.main.temp);
+  let hum = document.querySelector("#hum");
+  hum.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  let pres = document.querySelector("#pre");
+  pres.innerHTML = `Pressure: ${response.data.main.pressure} Pa`;
+  let desc = document.querySelector("#des");
+  desc.innerHTML = response.data.weather[0].main;
+  function hlink(event) {
+    event.preventDefault();
+    let f_link = document.querySelector("#fahrenheit-link");
+    let ff_link = document.querySelector("#change");
+    let fahrenheitTemperature = Math.round(
+      (response.data.main.temp * 9) / 5 + 32
+    );
+    ff_link.innerHTML = fahrenheitTemperature;
+  }
+
+  let link_ = document.querySelector("#fahrenheit-link");
+  link_.addEventListener("click", hlink);
+
+  function c_link(event) {
+    event.preventDefault();
+    let cc_link = document.querySelector("#celsius-link");
+    let ccc_link = document.querySelector("#change");
+    ccc_link.innerHTML = Math.round(response.data.main.temp);
+  }
+  let linkc_ = document.querySelector("#celsius-link");
+  linkc_.addEventListener("click", c_link);
+}
+
+
+  function locations(event) {
+  event.preventDefault();
+  let l_loc = document.querySelector(" #search");
+  let loc_s = document.querySelector("div .curr_loc");
+  loc_s.innerHTML = l_loc.value;
+  let loc_up = document.querySelector("div .ll");
+  loc_up.innerHTML = l_loc.value;
+
+  let city = l_loc.value;
+  let apiKey = "5fdeda3e32d8069764f0c24fbed131a7";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(temp);
+    }
+
+
+
+let button_g = document.querySelector("#geol");
+button_g.addEventListener("click", location_geo);
+
+let cur_loc = document.querySelector("#loc");
+cur_loc.addEventListener("submit", locations);
+
+</script>
+</body>
+</html>
